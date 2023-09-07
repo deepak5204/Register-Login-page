@@ -3,6 +3,6 @@ const router = express.Router();
 
 const { newRegister } = require('../controller/rigister')
 
-router.get('/get', newRegister);
+router.post('/', newRegister);
 
 module.exports = router

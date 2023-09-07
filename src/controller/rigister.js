@@ -1,7 +1,10 @@
 const Register = require('../model/Register')
 
-module.exports.newRegister = () => {
-    console.log('hello from new rigister!!');
-}
+module.exports.newRegister = async (req, res) => {
+    const newUser = await Register.create(req.body);
 
-// module.exports = newRegister
+    res.status(201).json({
+        staus: 'Success',
+        newUser
+    })
+}
